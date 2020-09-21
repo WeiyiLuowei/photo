@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* 跟父元素一样高 */
+        html,body{
+            height:100%;
+        }
+
+
+        body{
+       
+            background:radial-gradient(280px at right top,red,orange,skyblue);
+            overflow: hidden;
+        }    
+
+        img{
+
+            position: absolute;
+            bottom:-190px;
+        
+        }
+
+        body:hover img{
+
+            transition: all 5s;
+            transform: translate(1200px,-650px) rotate(90deg) scale(.1);
+        }
+
+    </style>
+
+</head>
+<body>
+    <img src="img/45725.jpg" alt="">
+</body>
+</html>

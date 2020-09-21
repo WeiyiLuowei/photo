@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+
+        .fish {
+
+            width: 174px;
+            height: 126px;
+            background: url(img/fish.png) no-repeat;
+
+            animation: shake 1s infinite steps(11), swimming 8s infinite;
+        }
+
+        .fish:nth-child(2) {
+
+            animation: shake 1s infinite steps(11), swimming 12s infinite;
+        }
+
+
+        .fish:nth-child(3) {
+
+            animation: shake 1s infinite steps(11), swimming 6.5s infinite;
+        }
+
+
+        .fish:nth-child(4) {
+
+            animation: shake 1s infinite steps(11), swimming 9s infinite;
+        }
+
+
+        .fish:nth-child(5) {
+
+            animation: shake 1s infinite steps(11), swimming 13s infinite;
+        }
+
+        @keyframes shake {
+
+            100% {
+                background-position-y: -1386px;
+            }
+        }
+        
+        /* 如果是同一个属性，那么这个百分比就理解为什么时候开始 */
+        @keyframes swimming {
+
+            40% {
+
+                transform: translate(1100px);
+            }
+
+            50% {
+
+                transform: translate(1100px) rotate(180deg);
+            }
+            
+            90%{
+
+                transform: rotate(-180deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+</body>
+
+</html>
