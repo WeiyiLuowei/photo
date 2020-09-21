@@ -1,0 +1,149 @@
+<!-- 
+
+    总体思路：拿6面li，然后依次把它们立起来
+
+    1.先把第一个li放左边，第二个放上，第三个放右，第四个放下
+    2.第一个li沿y轴旋转，并且右边固定，第二个li，沿着x轴旋转，下边固定，第三个li，沿着y轴旋转，左边固定，第四个li，沿着x轴旋转，上边固定，第五个li要沿着z轴平移，平移每个li的高度
+    3.把视点加在body，因为ul也要动，加在ul上不合理，因为视点也会跟着动
+    4.开启3D效果，给ul开，因为是ul要有3d效果
+    5.给body加hover,改ul，让它旋转
+    6.给ul加过渡
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        /* 3D效果原则：以后发现效果不对，1.检查是否开启了3D，2.把视点提到父元素，父元素还不行，就提父元素的父元素 */
+        body{
+
+           perspective: 1200px;
+        }
+
+        /* 浏览器默认没有开启3D功能 */
+        body:hover ul{
+
+            transform: rotateX(2700deg) rotateY(2700deg) rotateZ(2700deg);
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            margin: 150px auto;
+
+            transition:all 50s;
+        }
+
+        li {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            /* opacity: .5; */
+            background: url('img/meng.jpg') no-repeat left top/cover;
+        }
+
+        /* 第一个li放左边 */
+
+        li:first-child {
+
+            left: -200px;
+            background-color: orange;
+
+            /* 设置旋转固定点 */
+            transform-origin: right;
+            transform: rotateY(90deg);
+
+        }
+
+     
+        /* 第二个li放上边 */
+
+        li:nth-child(2) {
+
+            top: -200px;
+            background-color: #0f0;
+            /* 底部固定 */
+            transform-origin: bottom;
+            transform:rotateX(-90deg);
+        }
+
+        /* 第三个li放右边 */
+
+        li:nth-child(3) {
+
+            right: -200px;
+            background-color: #00f;
+            transform-origin: left;
+            transform:rotateY(-90deg);
+        }
+
+        /* 第四个li放右边 */
+
+        li:nth-child(4) {
+
+            bottom: -200px;
+            background-color: hotpink;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        li:nth-child(5){
+
+            transform: translateZ(200px);
+            background-color: black;
+        }
+		
+		.text{
+			float: left;
+		}
+		
+		.photo{
+			padding: 5px;
+		}
+    </style>
+</head>
+
+<body>
+	<div class="text" style="color:lightseagreen">
+		<h3>叶梦棪语录</h3>
+		<p>这个世界没有人会永远爱你</p>
+		<p>但永远都会有爱你的人出现</p>
+
+	    <p>当你熬过生活给你的所有痛苦</p>
+	    <p>就一定值得它赋予你更好的爱</p>
+
+	    <p>所以姑娘</p>
+	    <p>爱永远都会有并且永远都会在</p>
+
+           …❀叶花花❀…</p>
+    </div>
+	<div class="photo">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
