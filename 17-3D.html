@@ -133,26 +133,17 @@
 			<li></li>
 		</ul>
 	</div>
-	
-	<audio src="mediu/bgm1.mp3" autoplay="autoplay" controls="controls" id="audios"></audio>
-	<button onclick="voicePaly()">按钮</button>
 </body>
 	<script>
-		function voicePaly(){
-			  var music = document.getElementById('audios');
-			  var state = 0;
-			  document.addEventListener('touchstart', function(){    
-				  if(state==0){        
-					  music.play();        
-					  state=1;    
-				  }
-			  }, false);
-			  document.addEventListener("WeixinJSBridgeReady", function () {    
-				  music.play();
-			  }, false);
-			  //循环播放  
-			  music.load();    
-			  music.play();
+		var flag = undefined;
+		function voicePaly() {
+			if(flag == undefined) {
+				var music=new Audio();
+				music.src="mediu/bgm1.mp3";//这里替换成一个有效的音频文件地址以方便测试
+				music.loop=true;
+				music.play();
+				flag = 1;
+			}	
 		}
 	</script>
 </html>
