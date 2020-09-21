@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+            perspective: 800px;
+        }
+
+        ul {
+            width: 200px;
+            height: 300px;
+            padding: 0;
+            list-style: none;
+            margin: 10px auto;
+            border: 1px solid gold;
+            position: relative;
+            /* 开启3D */
+            transform-style: preserve-3d;
+
+            transition: all 1s;
+        }
+
+        ul:hover {
+
+            transform: rotateX(45deg) rotateZ(5deg);
+        }
+
+        li {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 10px gold;
+            position: absolute;
+            transform-origin: left;
+        }
+
+        li:first-child {
+
+            background: url('img/meng5.jpg') no-repeat left top /cover;
+        }
+
+        li:nth-child(2) {
+
+            background: url('img/meng4.jpg') no-repeat left top /cover;
+        }
+
+        li:nth-child(3) {
+
+            background: url('img/meng3.jpg') no-repeat left top /cover;
+        }
+
+
+        li:nth-child(4) {
+
+            background: url('img/meng2.jpg') no-repeat left top /cover;
+        }
+
+
+        li:nth-child(5) {
+
+            background: url('img/meng1.jpg') no-repeat left top /cover;
+        }
+
+
+        ul:hover li:nth-child(5) {
+
+            transition: all 1s 1s;
+            transform: rotateY(-170deg);
+        }
+
+        ul:hover li:nth-child(4) {
+
+            transition: all 1s 2s;
+            transform: rotateY(-150deg);
+        }
+
+        ul:hover li:nth-child(3) {
+
+            transition: all 1s 3s;
+            transform: rotateY(-130deg);
+        }
+
+        ul:hover li:nth-child(2) {
+
+            transition: all 1s 4s;
+            transform: rotateY(-110deg);
+        }
+    </style>
+</head>
+
+<body>
+	<div style="color:Lime;font-family:cursive" class="text">
+		<h3>流金岁月</h3>
+		<p>即使前路充满坎坷，依然回报以歌</p>
+		<p>愿你的世界有爱，愿你被世界温柔以待</p>
+	</div>
+	<div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+
+</html>
